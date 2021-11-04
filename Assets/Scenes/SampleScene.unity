@@ -217,7 +217,7 @@ MonoBehaviour:
   - id: 2
   constants:
     randomSeed: 539662033
-    totalIterations: 30
+    totalIterations: 100
     instanceCount: 1
     instanceIndex: 0
     framesPerIteration: 1
@@ -244,7 +244,7 @@ MonoBehaviour:
       type: {class: CameraRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers, asm: Assembly-CSharp}
       data:
         m_Enabled: 1
-        collapsed: 0
+        collapsed: 1
         rotation:
           collapsed: 0
           x:
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
+  m_RequiresDepthTextureOption: 1
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
@@ -701,10 +701,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1898413980}
-  - component: {fileID: 1898413983}
   - component: {fileID: 1898413982}
+  - component: {fileID: 1898413983}
   - component: {fileID: 1898413981}
-  - component: {fileID: 1898413984}
   m_Layer: 0
   m_Name: Depth Camera
   m_TagString: Untagged
@@ -739,7 +738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
+  m_RequiresDepthTextureOption: 1
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
@@ -758,14 +757,24 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &1898413982
-AudioListener:
+--- !u!114 &1898413982
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898413979}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a0594faf23d57459e8884fb6b948f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nameGenerator: {fileID: 0}
+  _imageFormat: 0
+  _screenCaptureInterval: 0.0166
+  _format: 32
+  _camera: {fileID: 1898413983}
+  captureTriggerMode: 1
 --- !u!20 &1898413983
 Camera:
   m_ObjectHideFlags: 0
@@ -809,24 +818,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &1898413984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898413979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a0594faf23d57459e8884fb6b948f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _nameGenerator: {fileID: 0}
-  _imageFormat: 0
-  _screenCaptureInterval: 0.0166
-  _format: 40
-  _camera: {fileID: 1898413983}
-  captureTriggerMode: 1
 --- !u!1 &2138677391
 GameObject:
   m_ObjectHideFlags: 0
