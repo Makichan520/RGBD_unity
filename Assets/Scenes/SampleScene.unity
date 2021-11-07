@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1a6bfce3dd49664e8c6b9e39c8d99f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _screenCaptureInterval: 0.0166
+  _screenCaptureInterval: 0.166
 --- !u!1 &1297598940
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,35 +241,32 @@ MonoBehaviour:
           value:
             id: 5
     00000001:
-      type: {class: CameraRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers, asm: Assembly-CSharp}
-      data:
-        m_Enabled: 1
-        collapsed: 1
-        rotation:
-          collapsed: 0
-          x:
-            id: 6
-          y:
-            id: 7
-          z:
-            id: 8
-        position:
-          collapsed: 0
-          x:
-            id: 9
-          y:
-            id: 10
-          z:
-            id: 11
-    00000002:
       type: {class: BrightnessRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers, asm: Assembly-CSharp}
       data:
         m_Enabled: 1
-        collapsed: 1
+        collapsed: 0
         brightness:
           collapsed: 0
           value:
-            id: 12
+            id: 6
+    00000002:
+      type: {class: CameraRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers, asm: Assembly-CSharp}
+      data:
+        m_Enabled: 1
+        collapsed: 0
+        target: {fileID: 1806802643}
+        rotation_z:
+          collapsed: 0
+          value:
+            id: 7
+        position:
+          collapsed: 0
+          x:
+            id: 8
+          y:
+            id: 9
+          z:
+            id: 10
     00000003:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
@@ -292,44 +289,32 @@ MonoBehaviour:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: -15
-          maximum: 15
+          minimum: 4
+          maximum: 8
     00000007:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: -15
-          maximum: 15
+          minimum: 0
+          maximum: 180
     00000008:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: -15
-          maximum: 15
+          minimum: 6
+          maximum: 30
     00000009:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: -10
-          maximum: 10
+          minimum: 6
+          maximum: 30
     0000000A:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 1
-          maximum: 8
-    0000000B:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: -15
-          maximum: 6
-    0000000C:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 0
-          maximum: 12
+          minimum: 6
+          maximum: 30
 --- !u!4 &1297598942
 Transform:
   m_ObjectHideFlags: 0
@@ -389,7 +374,7 @@ TerrainCollider:
   m_Material: {fileID: 0}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: e92d7ba7d39fef04e943f27579764cd5, type: 2}
-  m_EnableTreeColliders: 1
+  m_EnableTreeColliders: 0
 --- !u!218 &1499980504
 Terrain:
   m_ObjectHideFlags: 0
@@ -561,7 +546,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4467405dbcbd3d64ab4363e9ae8bb813, type: 3}
   m_Name: 
@@ -623,19 +608,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6831866518211546033, guid: a75f34e297d0d41939b1f730f6556b8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.63
+      value: 0.635
       objectReference: {fileID: 0}
     - target: {fileID: 6831866518211546033, guid: a75f34e297d0d41939b1f730f6556b8a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6831866518211546033, guid: a75f34e297d0d41939b1f730f6556b8a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6831866518211546033, guid: a75f34e297d0d41939b1f730f6556b8a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6831866518211546033, guid: a75f34e297d0d41939b1f730f6556b8a, type: 3}
       propertyPath: m_LocalRotation.y
@@ -643,7 +628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6831866518211546033, guid: a75f34e297d0d41939b1f730f6556b8a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6831866518211546033, guid: a75f34e297d0d41939b1f730f6556b8a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -764,15 +749,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898413979}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0a0594faf23d57459e8884fb6b948f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _nameGenerator: {fileID: 0}
-  _imageFormat: 0
+  _imageFormat: 3
   _screenCaptureInterval: 0.0166
-  _format: 32
+  _format: 52
   _camera: {fileID: 1898413983}
   captureTriggerMode: 1
 --- !u!20 &1898413983
@@ -782,7 +767,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898413979}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
