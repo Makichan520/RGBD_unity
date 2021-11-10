@@ -35,6 +35,7 @@ namespace UnityEditor.UI
         {
             Tools.hidden = false;
             m_ShowNativeSize.valueChanged.RemoveListener(Repaint);
+            SceneView.duringSceneGui -= DrawAnchorsOnSceneView;
         }
 
         protected virtual void OnEnable()
@@ -55,6 +56,8 @@ namespace UnityEditor.UI
 
             m_ShowNativeSize = new AnimBool(false);
             m_ShowNativeSize.valueChanged.AddListener(Repaint);
+
+            SceneView.duringSceneGui += DrawAnchorsOnSceneView;
         }
 
         public override void OnInspectorGUI()
@@ -65,6 +68,37 @@ namespace UnityEditor.UI
             RaycastControlsGUI();
             MaskableControlsGUI();
             serializedObject.ApplyModifiedProperties();
+        }
+
+        void DrawAnchorsOnSceneView(SceneView sceneView)
+        {
+            if (!target || targets.Length > 1)
+                return;
+
+            if (!sceneView.drawGizmos || !EditorGUIUtility.IsGizmosAllowedForObject(target))
+                return;
+
+            Graphic graphic = target as Graphic;
+
+            RectTransform gui = graphic.rectTransform;
+            Transform ownSpace = gui.transform;
+            Rect rectInOwnSpace = gui.rect;
+
+            Handles.color = Handles.UIColliderHandleColor;
+            DrawRect(rectInOwnSpace, ownSpace, graphic.raycastPadding);
+        }
+
+        void DrawRect(Rect rect, Transform space, Vector4 offset)
+        {
+            Vector3 p0 = space.TransformPoint(new Vector2(rect.x + offset.x, rect.y + offset.y));
+            Vector3 p1 = space.TransformPoint(new Vector2(rect.x + offset.x, rect.yMax - offset.w));
+            Vector3 p2 = space.TransformPoint(new Vector2(rect.xMax - offset.z, rect.yMax - offset.w));
+            Vector3 p3 = space.TransformPoint(new Vector2(rect.xMax - offset.z, rect.y + offset.y));
+
+            Handles.DrawLine(p0, p1);
+            Handles.DrawLine(p1, p2);
+            Handles.DrawLine(p2, p3);
+            Handles.DrawLine(p3, p0);
         }
 
         /// <summary>
@@ -126,7 +160,14 @@ namespace UnityEditor.UI
         {
             EditorGUILayout.PropertyField(m_RaycastTarget);
 
-            m_ShowPadding = EditorGUILayout.Foldout(m_ShowPadding, m_PaddingContent);
+            using (var check = new EditorGUI.ChangeCheckScope())
+            {
+                m_ShowPadding = EditorGUILayout.Foldout(m_ShowPadding, m_PaddingContent, true);
+                if (check.changed)
+                {
+                    SceneView.RepaintAll();
+                }
+            }
 
             if (m_ShowPadding)
             {
@@ -136,9 +177,9 @@ namespace UnityEditor.UI
                     Vector4 newPadding = m_RaycastPadding.vector4Value;
 
                     newPadding.x = EditorGUILayout.FloatField(m_LeftContent, newPadding.x);
+                    newPadding.y = EditorGUILayout.FloatField(m_BottomContent, newPadding.y);
                     newPadding.z = EditorGUILayout.FloatField(m_RightContent, newPadding.z);
                     newPadding.w = EditorGUILayout.FloatField(m_TopContent, newPadding.w);
-                    newPadding.y = EditorGUILayout.FloatField(m_BottomContent, newPadding.y);
 
                     if (check.changed)
                     {
