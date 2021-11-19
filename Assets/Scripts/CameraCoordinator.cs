@@ -8,6 +8,7 @@ public class CameraCoordinator : MonoBehaviour
 {
     public float               _screenCaptureInterval = 0.166f; 
     float                      _elapsedTime;
+    public float               _startTime = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,10 @@ public class CameraCoordinator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _startTime -= Time.deltaTime;
+        if(_startTime >= 0){
+            return;
+        }
         _elapsedTime += Time.deltaTime;
         if (_elapsedTime > _screenCaptureInterval)
         {

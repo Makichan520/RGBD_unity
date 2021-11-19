@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3009062410559160139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3009062410559160137}
+  - component: {fileID: 3009062410559160138}
+  m_Layer: 0
+  m_Name: Scenario
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3009062410559160137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3009062410559160139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.5699997, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3009062410559160138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3009062410559160139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50076aff0af4515b4422166496fdd5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Randomizers:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  constants:
+    randomSeed: 539662033
+    totalIterations: 100
+    instanceCount: 1
+    instanceIndex: 0
+    framesPerIteration: 1
+  references:
+    version: 1
+    00000000:
+      type: {class: SunAngleRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
+      data:
+        m_Enabled: 0
+        collapsed: 1
+        hour:
+          collapsed: 0
+          value:
+            id: 4
+        dayOfTheYear:
+          collapsed: 0
+          value:
+            id: 5
+        latitude:
+          collapsed: 0
+          value:
+            id: 6
+    00000001:
+      type: {class: BrightnessRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers, asm: Assembly-CSharp}
+      data:
+        m_Enabled: 0
+        collapsed: 1
+        brightness:
+          collapsed: 0
+          value:
+            id: 7
+    00000002:
+      type: {class: CameraRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers, asm: Assembly-CSharp}
+      data:
+        m_Enabled: 0
+        collapsed: 1
+        target: {fileID: 0}
+        rotation_z:
+          collapsed: 0
+          value:
+            id: 8
+        position:
+          collapsed: 0
+          x:
+            id: 9
+          y:
+            id: 10
+          z:
+            id: 11
+    00000003:
+      type: {class: BackgroundObjectPlacementRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
+      data:
+        m_Enabled: 0
+        collapsed: 1
+        depth: 0
+        layerCount: 1
+        separationDistance: 5
+        placementArea: {x: 30, y: 30}
+        prefabs:
+          collapsed: 0
+          probabilities: []
+          uniform: 1
+          m_Sampler:
+            id: 12
+          m_Categories: []
+    00000004:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0
+          maximum: 24
+    00000005:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0
+          maximum: 364
+    00000006:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: -90
+          maximum: 90
+    00000007:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 4
+          maximum: 8
+    00000008:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0
+          maximum: 180
+    00000009:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 6
+          maximum: 30
+    0000000A:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 6
+          maximum: 30
+    0000000B:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 6
+          maximum: 30
+    0000000C:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0
+          maximum: 1

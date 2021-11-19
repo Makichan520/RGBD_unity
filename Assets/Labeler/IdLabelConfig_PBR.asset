@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f09f279848e42cea259348b13bce4c5, type: 3}
+  m_Name: IdLabelConfig_PBR
+  m_EditorClassIdentifier: 
+  m_LabelEntries:
+  - label: Bag
+    id: 1
+  - label: Hammer
+    id: 2
+  - label: Plane
+    id: 3
+  - label: Cardboard Box
+    id: 4
+  - label: Cargo
+    id: 5
+  - label: Chair
+    id: 6
+  - label: Conveyor
+    id: 7
+  - label: Air tank
+    id: 8
+  - label: Decel
+    id: 9
+  - label: Mat
+    id: 10
+  - label: Electric generator
+    id: 11
+  - label: Extinguisher
+    id: 12
+  - label: Locker
+    id: 13
+  - label: Speaker
+    id: 14
+  - label: Pipe
+    id: 15
+  - label: Pallet
+    id: 16
+  - label: Papers
+    id: 17
+  - label: Paper stack
+    id: 18
+  - label: Parcel box
+    id: 19
+  - label: Plastic bin
+    id: 20
+  - label: Plastic drum
+    id: 21
+  - label: Gas tank
+    id: 22
+  - label: Shelf
+    id: 23
+  - label: Crate
+    id: 24
+  - label: Light
+    id: 25
+  - label: Vat tank
+    id: 26
+  - label: Ladder
+    id: 27
+  - label: Table
+    id: 28
+  autoAssignIds: 1
+  startingLabelId: 1

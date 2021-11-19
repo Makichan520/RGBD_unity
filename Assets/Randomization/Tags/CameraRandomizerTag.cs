@@ -1,7 +1,7 @@
 namespace UnityEngine.Perception.Randomization.Randomizers.Tags
 {
     /// <summary>
-    /// Used in conjunction with a RotationRandomizer to vary the rotation of GameObjects
+    /// Used in conjunction with a CameraRandomizer to vary the rotation and position of cameras.
     /// </summary>
     [AddComponentMenu("Perception/RandomizerTags/Camera Randomizer Tag")]
     public class CameraRandomizerTag : RandomizerTag { }

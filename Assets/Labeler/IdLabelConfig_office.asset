@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f09f279848e42cea259348b13bce4c5, type: 3}
+  m_Name: IdLabelConfig_office
+  m_EditorClassIdentifier: 
+  m_LabelEntries:
+  - label: Dark
+    id: 1
+  - label: Terrain
+    id: 2
+  - label: Book
+    id: 3
+  - label: Table
+    id: 4
+  - label: Couch
+    id: 5
+  - label: BookBox
+    id: 6
+  - label: Broom
+    id: 7
+  - label: CarboardBox
+    id: 8
+  - label: Chair
+    id: 9
+  - label: Clipboard
+    id: 10
+  - label: Clock
+    id: 11
+  - label: Cup
+    id: 12
+  - label: Computer
+    id: 13
+  - label: Cupboard
+    id: 14
+  - label: Phone
+    id: 15
+  - label: Fan
+    id: 16
+  - label: Plant
+    id: 17
+  - label: FileBox
+    id: 18
+  - label: Files
+    id: 19
+  - label: Disk
+    id: 20
+  - label: JanitorCart
+    id: 21
+  - label: Keyboard
+    id: 22
+  - label: Lamp
+    id: 23
+  - label: Lockers
+    id: 24
+  - label: MousePad
+    id: 25
+  - label: Papers
+    id: 26
+  - label: Projector
+    id: 27
+  - label: Pen
+    id: 28
+  - label: Tray
+    id: 29
+  - label: Photo
+    id: 30
+  - label: Pinboard
+    id: 31
+  - label: Note
+    id: 32
+  - label: Shelf
+    id: 33
+  - label: Printer
+    id: 34
+  - label: Bin
+    id: 35
+  - label: RubixCube
+    id: 36
+  - label: Scanner
+    id: 37
+  - label: Sinks
+    id: 38
+  - label: Stapler
+    id: 39
+  - label: WaterCooler
+    id: 40
+  - label: WhiteBoard
+    id: 41
+  - label: Desk
+    id: 42
+  - label: Cabinet
+    id: 43
+  - label: Laptop
+    id: 44
+  - label: PowerOutlet
+    id: 45
+  - label: Plane
+    id: 46
+  - label: Pallet
+    id: 47
+  autoAssignIds: 1
+  startingLabelId: 1

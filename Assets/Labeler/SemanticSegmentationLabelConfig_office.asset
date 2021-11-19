@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d0176327854820ab53adc46cbec7c1, type: 3}
+  m_Name: SemanticSegmentationLabelConfig_office
+  m_EditorClassIdentifier: 
+  m_LabelEntries:
+  - label: Terrain
+    color: {r: 0.20220268, g: 0.9150943, b: 0.09927912, a: 1}
+  - label: Dark
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - label: Book
+    color: {r: 0, g: 0, b: 1, a: 1}
+  - label: Table
+    color: {r: 0.8773585, g: 0.13656996, b: 0.13656996, a: 1}
+  - label: Couch
+    color: {r: 0.8018868, g: 0.011347434, b: 0.6065054, a: 1}
+  - label: BookBox
+    color: {r: 0, g: 1, b: 0, a: 1}
+  - label: Broom
+    color: {r: 1, g: 0, b: 0, a: 1}
+  - label: CarboardBox
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - label: Chair
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - label: Clipboard
+    color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  - label: Clock
+    color: {r: 0.32558775, g: 1, b: 0.8026659, a: 1}
+  - label: Cup
+    color: {r: 0.37283546, g: 1, b: 0.30741394, a: 1}
+  - label: Computer
+    color: {r: 1, g: 0.19832253, b: 0.18815076, a: 1}
+  - label: Cupboard
+    color: {r: 0.4519954, g: 0.33099264, b: 1, a: 1}
+  - label: Desk
+    color: {r: 1, g: 0.16402149, b: 0.3878402, a: 1}
+  - label: Fan
+    color: {r: 1, g: 0.73863095, b: 0.26334274, a: 1}
+  - label: Phone
+    color: {r: 0.4411671, g: 0.11241764, b: 1, a: 1}
+  - label: FileBox
+    color: {r: 1, g: 0.5956404, b: 0.38238657, a: 1}
+  - label: Cabinet
+    color: {r: 1, g: 0.2949568, b: 0.74403274, a: 1}
+  - label: Disk
+    color: {r: 0.2542975, g: 1, b: 0.47441563, a: 1}
+  - label: JanitorCart
+    color: {r: 0.23767745, g: 0.7083697, b: 1, a: 1}
+  - label: Keyboard
+    color: {r: 0.39840487, g: 1, b: 0.10022479, a: 1}
+  - label: Lamp
+    color: {r: 0.029315412, g: 0.19522657, b: 1, a: 1}
+  - label: Laptop
+    color: {r: 0.47654825, g: 0.50420684, b: 1, a: 1}
+  - label: Lockers
+    color: {r: 1, g: 0.26862216, b: 0.789504, a: 1}
+  - label: MousePad
+    color: {r: 1, g: 0.07787758, b: 0.2815516, a: 1}
+  - label: Note
+    color: {r: 0.26804757, g: 1, b: 0.30491513, a: 1}
+  - label: Projector
+    color: {r: 0.5298743, g: 0.24466634, b: 1, a: 1}
+  - label: Papers
+    color: {r: 0.3876325, g: 1, b: 0.22897685, a: 1}
+  - label: Tray
+    color: {r: 1, g: 0.46700528, b: 0.16745663, a: 1}
+  - label: Pen
+    color: {r: 0.92063993, g: 1, b: 0.44499415, a: 1}
+  - label: Photo
+    color: {r: 0.32729256, g: 0.558802, b: 1, a: 1}
+  - label: Printer
+    color: {r: 0.040476978, g: 1, b: 0.92865956, a: 1}
+  - label: Pinboard
+    color: {r: 0.74971855, g: 1, b: 0.31370568, a: 1}
+  - label: Plant
+    color: {r: 0.3142293, g: 1, b: 0.38786322, a: 1}
+  - label: PowerOutlet
+    color: {r: 0.36918253, g: 1, b: 0.65942776, a: 1}
+  - label: Bin
+    color: {r: 1, g: 0.36044103, b: 0.4023024, a: 1}
+  - label: RubixCube
+    color: {r: 0.2887665, g: 1, b: 0.8607199, a: 1}
+  - label: Shelf
+    color: {r: 1, g: 0.41597933, b: 0.51130676, a: 1}
+  - label: Sinks
+    color: {r: 0.18608093, g: 1, b: 0.82289094, a: 1}
+  - label: Stapler
+    color: {r: 0.9351634, g: 1, b: 0.42244226, a: 1}
+  - label: WaterCooler
+    color: {r: 0.43597797, g: 0.3752166, b: 1, a: 1}
+  - label: WhiteBoard
+    color: {r: 0.4952276, g: 0.19033122, b: 1, a: 1}
+  - label: Plane
+    color: {r: 0.37514338, g: 0.36227578, b: 1, a: 1}
+  - label: Pallet
+    color: {r: 1, g: 0.08352393, b: 0.39375547, a: 1}

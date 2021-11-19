@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d0176327854820ab53adc46cbec7c1, type: 3}
+  m_Name: SemanticSegmentationLabelConfig_PBR
+  m_EditorClassIdentifier: 
+  m_LabelEntries:
+  - label: Bag
+    color: {r: 0, g: 0, b: 1, a: 1}
+  - label: Hammer
+    color: {r: 0, g: 1, b: 0, a: 1}
+  - label: Plane
+    color: {r: 1, g: 0, b: 0, a: 1}
+  - label: Cardboard Box
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - label: Cargo
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - label: Chair
+    color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  - label: Conveyor
+    color: {r: 0.10616517, g: 1, b: 0.45724332, a: 1}
+  - label: Air tank
+    color: {r: 0.03092891, g: 1, b: 0.45377555, a: 1}
+  - label: Decel
+    color: {r: 0.6129296, g: 0.21034896, b: 1, a: 1}
+  - label: Mat
+    color: {r: 0.33376282, g: 0.6148631, b: 1, a: 1}
+  - label: Electric generator
+    color: {r: 1, g: 0.36758882, b: 0.88570595, a: 1}
+  - label: Extinguisher
+    color: {r: 0.5774618, g: 0.4608307, b: 1, a: 1}
+  - label: Locker
+    color: {r: 1, g: 0.6029585, b: 0.40189838, a: 1}
+  - label: Speaker
+    color: {r: 1, g: 0.99220616, b: 0.3751654, a: 1}
+  - label: Pipe
+    color: {r: 0.22078478, g: 1, b: 0.76093686, a: 1}
+  - label: Pallet
+    color: {r: 1, g: 0.3505008, b: 0.21504188, a: 1}
+  - label: Papers
+    color: {r: 0.10320085, g: 0.67557424, b: 1, a: 1}
+  - label: Paper stack
+    color: {r: 1, g: 0.3157251, b: 0.6082335, a: 1}
+  - label: Parcel box
+    color: {r: 0.3525463, g: 0.2587093, b: 1, a: 1}
+  - label: Plastic bin
+    color: {r: 0.3602569, g: 1, b: 0.50125176, a: 1}
+  - label: Plastic drum
+    color: {r: 0.8939454, g: 1, b: 0.22575402, a: 1}
+  - label: Gas tank
+    color: {r: 1, g: 0.067433596, b: 0.23214836, a: 1}
+  - label: Shelf
+    color: {r: 0.112253904, g: 1, b: 0.67245644, a: 1}
+  - label: Crate
+    color: {r: 1, g: 0.86679894, b: 0.23037171, a: 1}
+  - label: Light
+    color: {r: 1, g: 0.40591043, b: 0.9169664, a: 1}
+  - label: Vat tank
+    color: {r: 1, g: 0.35757518, b: 0.26879632, a: 1}
+  - label: Ladder
+    color: {r: 0.24583614, g: 1, b: 0.25306633, a: 1}
+  - label: Table
+    color: {r: 1, g: 0.23507762, b: 0.03885019, a: 1}
