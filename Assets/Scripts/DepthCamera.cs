@@ -18,7 +18,6 @@ namespace Perc6d
 
         float                      _elapsedTime;
         string                     _baseDirectory;
-        int                        _sequence = 0;
         public Camera              _camera;
 
         public CaptureTriggerMode captureTriggerMode = CaptureTriggerMode.Scheduled;
@@ -27,7 +26,7 @@ namespace Perc6d
         
         void Start()
         {
-            _baseDirectory = Manager.Instance.GetDirectoryFor(DataCapturePaths.ScreenCapture);
+            _baseDirectory = "G:/Unity Output/ScreenCapture";
             if (_camera != null && _camera.depthTextureMode == DepthTextureMode.None)
                 _camera.depthTextureMode = DepthTextureMode.Depth;
         }
@@ -62,7 +61,7 @@ namespace Perc6d
             else
 #endif
                 path = Path.Combine(_baseDirectory,
-                    _camera.name + "_depth_" + _sequence + "." + _imageFormat.ToString().ToLower());
+                    _camera.name + "_depth_" + Time.frameCount + "." + _imageFormat.ToString().ToLower());
 
             CaptureCamera.CaptureDepthToFile
             (
@@ -75,7 +74,6 @@ namespace Perc6d
             if (!_camera.enabled)
                 _camera.Render();
 
-            ++_sequence;
         }
 
         void OnValidate()

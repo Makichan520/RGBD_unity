@@ -16,6 +16,7 @@ public class StaticController : MonoBehaviour
     {
         lastPosition = transform.position;
         lastTime = Time.time;
+        ObjectMeasure();
     }
 
     // Update is called once per frame
@@ -46,5 +47,16 @@ public class StaticController : MonoBehaviour
 
     private void OnWillRenderObject() {
         renderTime = Time.time;
+    }
+
+    private void ObjectMeasure(){
+        if(GetComponent<MeshFilter>() == null){
+            return;
+        }
+        Vector3 length = GetComponent<MeshFilter>().mesh.bounds.min;
+        float x = length.x;
+        float y = length.y;
+        float z = length.z;
+        Debug.Log("Target object min scale:\nX: " + x + " Y: " + y + " Z: " + z);
     }
 }

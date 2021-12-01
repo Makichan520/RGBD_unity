@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: IdLabelConfig
   m_EditorClassIdentifier: 
   m_LabelEntries:
-  - label: Dark
+  - label: Duck
     id: 1
-  - label: Terrain
+  - label: Plane
     id: 2
   autoAssignIds: 1
   startingLabelId: 1

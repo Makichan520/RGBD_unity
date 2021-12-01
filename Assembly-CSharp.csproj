@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{602c1864-c648-1729-ba3e-f53076f4218b}</ProjectGuid>
+    <ProjectGuid>{b8e21f2f-4bd3-ce95-809a-06e3b36597a2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -40,6 +40,7 @@
      <Compile Include="Assets\Randomization\Tags\CameraRandomizerTag.cs" />
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\Scripts\CenterScript.cs" />
+     <Compile Include="Assets\Randomization\Tags\ObjectsRandomizerTag.cs" />
      <Compile Include="Assets\Randomization\Randomizers\BackgroundRandomizer.cs" />
      <Compile Include="Assets\Randomization\Randomizers\BrightnessRandomizer.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
@@ -47,7 +48,8 @@
      <Compile Include="Assets\Randomization\Randomizers\CameraRandomizer.cs" />
      <Compile Include="Assets\Scripts\CameraCoordinator.cs" />
      <Compile Include="Assets\Scripts\StaticController.cs" />
-     <Compile Include="Assets\Randomization\Tags\ObjectsRandomizerTag.cs" />
+     <Compile Include="Assets\Scripts\ObjectMeasure.cs" />
+     <Compile Include="Assets\Randomization\Randomizers\SimpleCameraRandomizer.cs" />
     <Reference Include="UnityEngine">
         <HintPath>G:\Unity\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -271,13 +273,13 @@
         <HintPath>G:\Unity\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\PackageCache\com.unity.burst@1.4.6\Unity.Burst.Unsafe.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\PackageCache\com.unity.burst@1.4.6\Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0-preview\Runtime\Newtonsoft.Json.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0-preview\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\PackageCache\com.unity.collections@0.9.0-preview.6\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\PackageCache\com.unity.collections@0.9.0-preview.6\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
         <HintPath>G:\Unity\Editor\2020.3.20f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
@@ -628,97 +630,97 @@
         <HintPath>G:\Unity\Editor\2020.3.20f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Simulation.Client.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Simulation.Client.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Simulation.Client.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Perception.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Perception.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Perception.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Simulation.Capture">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Simulation.Capture.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Simulation.Capture.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Perception.Runtime">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Perception.Runtime.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Perception.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Simulation.Capture.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Simulation.Capture.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Simulation.Capture.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Simulation.Core">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.Simulation.Core.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.Simulation.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-        <HintPath>G:\perception_test\RGBD_dataset\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+        <HintPath>G:\perception_test\RGBD_dataset\RGBD_unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

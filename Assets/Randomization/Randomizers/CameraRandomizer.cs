@@ -3,6 +3,9 @@ using UnityEngine.Perception.Randomization.Parameters;
 using UnityEngine.Perception.Randomization.Randomizers.Tags;
 using UnityEngine.Perception.Randomization.Samplers;
 
+using Perc6d;
+using UnityEngine.Perception.GroundTruth;
+
 namespace UnityEngine.Perception.Randomization.Randomizers{
     /// <summary>
     /// Randomizes the rotation of objects tagged with a CameraRandomizerTag
@@ -26,16 +29,9 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
         [Tooltip("The range of random rotations to assign to target objects.")]
         public FloatParameter rotation_z = new FloatParameter { value = new UniformSampler(0,360) };
 
-        /// <summary>
-        /// The range of random relative distance to assign to camera.
-        /// </summary>
+        
         [Tooltip("The range of random relative distance to assign to camera.")]
-        public Vector3Parameter position = new Vector3Parameter
-        {
-            x = new UniformSampler(0, 360),
-            y = new UniformSampler(0, 360),
-            z = new UniformSampler(0, 360)
-        };
+        public UniformSampler distance = new UniformSampler(0,3f);
 
         private BooleanParameter pos_neg = new BooleanParameter();
 
@@ -86,7 +82,7 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
                     return;
                 }
             }
-
+            
             Vector3 target_position = (maxPosition + minPosition)/2f;
             Debug.Log("max position: " + maxPosition + "\nmin position " + minPosition);
 
@@ -94,8 +90,10 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
             foreach (var tag in cameraTags){
                 bool status = true;
                 for(int i = 0; i < maxIterations; i++){
-                    Vector3 offset = position.Sample() + (maxPosition-minPosition)/2f;
-                    offset.Scale(scaleVector());
+                    float radius = Vector3.Distance(maxPosition,minPosition)/2f;
+                    Vector3 offset = Random.onUnitSphere * ( distance.Sample()+radius );
+                    offset.y = Math.Abs(offset.y);
+                    
                     tag.transform.position = offset + target_position;
                     tag.transform.LookAt(target_position);
                     tag.transform.Rotate(0,0,rotation_z.Sample(),Space.Self);
@@ -110,24 +108,42 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
                     }else{
                         // request camera capture
                         Debug.Log("Request camera capture...");
+                        RequestCapture(tag);
                         break;
                     }
                 }
             }
+
+            var tags = tagManager.Query<CameraRandomizerTag>();
+            foreach (var tag in tags){
+                Vector3 position = Random.onUnitSphere * distance.Sample();
+                position.y = Math.Abs(position.y);
+                tag.transform.position = target.transform.position + position;
+                tag.transform.LookAt(target.transform.position);
+                tag.transform.Rotate(0,0,rotation_z.Sample(),Space.Self);
+                RequestCapture(tag);
+            }
+
+
         }
         
-        /// <summary>
-        /// Generate a Vector for scale.(in this case (±1,1，±1))
-        /// </summary>
-        private Vector3 scaleVector(){
-            Vector3 result = Vector3.one;
-            if(pos_neg.Sample()){
-                result.x *= -1;
+
+
+        private int RequestCapture(CameraRandomizerTag cameras){
+            PerceptionCamera[] percCameras = cameras.GetComponentsInChildren<PerceptionCamera>();
+            foreach (PerceptionCamera cam in percCameras)
+            {
+                Debug.Log("request perception...");
+                cam.RequestCapture();
             }
-            if(pos_neg.Sample()){
-                result.z *= -1;
+
+            DepthCamera[] depthCameras = cameras.GetComponentsInChildren<DepthCamera>();
+            foreach (DepthCamera cam in depthCameras)
+            {
+                Debug.Log("request depth...");
+                cam.RequestCapture();
             }
-            return result;
+            return 0;
         }
     }
 }
