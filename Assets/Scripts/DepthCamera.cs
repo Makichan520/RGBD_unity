@@ -26,7 +26,7 @@ namespace Perc6d
         
         void Start()
         {
-            _baseDirectory = "G:/Unity Output/ScreenCapture";
+            _baseDirectory = Manager.Instance.GetDirectoryFor(DataCapturePaths.ScreenCapture);
             if (_camera != null && _camera.depthTextureMode == DepthTextureMode.None)
                 _camera.depthTextureMode = DepthTextureMode.Depth;
         }

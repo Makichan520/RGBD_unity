@@ -32,6 +32,7 @@ public class StaticController : MonoBehaviour
         }else{
             is_Rendering = false;
         }
+        //LogInfos();
         lastPosition = transform.position;
         lastTime = Time.time;
         lastRenderTime = renderTime;
@@ -58,5 +59,10 @@ public class StaticController : MonoBehaviour
         float y = length.y;
         float z = length.z;
         Debug.Log("Target object min scale:\nX: " + x + " Y: " + y + " Z: " + z);
+    }
+
+    private void LogInfos(){
+        Debug.Log(name + "in " + Time.frameCount + ". frame: pos = x:" + transform.position.x + "y: " + transform.position.y
+        + "z: " + transform.position.z +  "\n rot = " + transform.rotation);
     }
 }

@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{2F1FE2B8-D34B-95CE-809A-06E3B36597A2}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Library/PackageCache/com.unity.perception@0.8.0-preview.4/Runtime/Randomization/Randomizers/RandomizerExamples/Randomizers/SunAngleRandomizer.cs">
+    <Files>
+      <File FileName="Assets/Randomization/Randomizers/BrightnessRandomizer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DepthCamera.cs" />
+      <File FileName="Library/PackageCache/com.unity.perception@0.8.0-preview.4/Runtime/Randomization/Randomizers/RandomizerExamples/Randomizers/SunAngleRandomizer.cs" Line="22" Column="88" />
+      <File FileName="Assets/Randomization/Randomizers/CameraRandomizer.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RGBD_unity" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Randomization" expanded="True">
+                <Node name="Randomizers" expanded="True">
+                  <Node name="BrightnessRandomizer.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="95c37133-f268-47c1-bed9-183b83e6e05c" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
