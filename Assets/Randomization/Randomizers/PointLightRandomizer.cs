@@ -25,6 +25,11 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
         [Tooltip("The range of random relative distance to assign to light.")]
         public UniformSampler distance = new UniformSampler(0,3f);
 
+<<<<<<< HEAD
+=======
+        [Tooltip("If x direction to assign to Pointlight positive.")]
+        public bool direction = false;
+>>>>>>> 5ee80fd98b88603357853981fc41df1fc2d87b50
 
 
 
@@ -55,4 +60,8 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
         }
         
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5ee80fd98b88603357853981fc41df1fc2d87b50
