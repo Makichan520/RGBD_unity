@@ -44,12 +44,18 @@
      <Compile Include="Assets\Randomization\Randomizers\BackgroundRandomizer.cs" />
      <Compile Include="Assets\Randomization\Randomizers\BrightnessRandomizer.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\Scripts\TargetLabeler.cs" />
+     <Compile Include="Assets\Randomization\Randomizers\SimpleCameraRandomizer.cs" />
      <Compile Include="Assets\Scripts\DepthCamera.cs" />
      <Compile Include="Assets\Randomization\Randomizers\CameraRandomizer.cs" />
      <Compile Include="Assets\Scripts\CameraCoordinator.cs" />
+     <Compile Include="Assets\Scripts\IntrinsicMatrixLabeler.cs" />
+     <Compile Include="Assets\Randomization\Tags\TargetTag.cs" />
      <Compile Include="Assets\Scripts\StaticController.cs" />
      <Compile Include="Assets\Scripts\ObjectMeasure.cs" />
-     <Compile Include="Assets\Randomization\Randomizers\SimpleCameraRandomizer.cs" />
+     <Compile Include="Assets\Scripts\CustomReporter.cs" />
+     <Compile Include="Assets\Randomization\Randomizers\PointLightRandomizer.cs" />
+     <Compile Include="Assets\Randomization\Tags\PointLightRandomizerTag.cs" />
     <Reference Include="UnityEngine">
         <HintPath>G:\Unity\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

@@ -53,6 +53,8 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
                 tag.transform.position = target.transform.position + position;
                 tag.transform.LookAt(target.transform.position);
                 tag.transform.Rotate(0,0,rotation_z.Sample(),Space.Self);
+                Debug.Log("Camera in " + Time.frameCount + ". frame: pos = x:" + tag.transform.position.x + "y: " + tag.transform.position.y
+                + "z: " + tag.transform.position.z +  "\n rot = " + tag.transform.rotation);
                 RequestCapture(tag);
             }
 
@@ -75,5 +77,6 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
             }
             return 0;
         }
+
     }
 }
