@@ -31,14 +31,6 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
         [Tooltip("The range of random relative distance to assign to camera.")]
         public UniformSampler distance = new UniformSampler(0,3f);
 
-        private BooleanParameter pos_neg = new BooleanParameter();
-
-        private Vector3 z_Position = Vector3.negativeInfinity;
-
-        private Vector3 minPosition = Vector3.positiveInfinity;
-
-        private Vector3 maxPosition = Vector3.negativeInfinity;
-
 
         /// <summary>
         /// Randomizes the rotation and position of tagged objects at the start of each scenario iteration

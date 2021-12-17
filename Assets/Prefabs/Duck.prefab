@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6474185741158569688}
-  - component: {fileID: 6474185741158569691}
   - component: {fileID: 6474185741158569690}
   - component: {fileID: 6474185741158569689}
   - component: {fileID: 763214544}
   - component: {fileID: 763214545}
   - component: {fileID: 6992782264043406724}
+  - component: {fileID: 41770274789803132}
   m_Layer: 0
   m_Name: Duck
   m_TagString: Untagged
@@ -30,20 +30,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6474185741158569669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0439, z: 0}
+  m_LocalPosition: {x: 0.0101, y: 0.0439, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6474185741158569691
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6474185741158569669}
-  m_Mesh: {fileID: -852665181816282872, guid: d113f4707235fa541887b8fe7c9595e3, type: 3}
 --- !u!23 &6474185741158569690
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -142,3 +134,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!33 &41770274789803132
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6474185741158569669}
+  m_Mesh: {fileID: -852665181816282872, guid: d113f4707235fa541887b8fe7c9595e3, type: 3}

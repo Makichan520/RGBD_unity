@@ -103,3 +103,13 @@ MonoBehaviour:
     color: {r: 0.37514338, g: 0.36227578, b: 1, a: 1}
   - label: Pallet
     color: {r: 1, g: 0.08352393, b: 0.39375547, a: 1}
+  - label: Rack
+    color: {r: 0.51722217, g: 0.052404404, b: 1, a: 1}
+  - label: AshTray
+    color: {r: 1, g: 0.20573556, b: 0.4882384, a: 1}
+  - label: Glasses
+    color: {r: 0.43368578, g: 1, b: 0.97513044, a: 1}
+  - label: Nameplate
+    color: {r: 0.61221564, g: 1, b: 0.19820607, a: 1}
+  - label: Radio
+    color: {r: 0.06899363, g: 0.6872889, b: 1, a: 1}

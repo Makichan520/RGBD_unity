@@ -23,6 +23,15 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
         [Tooltip("The max random rounds of camera randomazition to capture all the objects.")]
         public int maxIterations = 40;
 
+        [Tooltip("Which frame that should start to be captured.")]
+        public int startAtFrame = 300;
+
+        /// <summary>
+        /// The number of frames that should be captured between 2 background randomizations.
+        /// </summary>
+        [Tooltip("The number of frames that should be captured between 2 background randomizations.")]
+        public int captureFrames = 500;
+
         /// <summary>
         /// The range of random rotations to assign to target objects
         /// </summary>
@@ -41,12 +50,17 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
 
         private Vector3 maxPosition = Vector3.negativeInfinity;
 
+        private int iterationCounter = 0;
+
 
         /// <summary>
         /// Randomizes the rotation and position of tagged objects at the start of each scenario iteration
         /// </summary>
         protected override void OnIterationStart()
         {
+            if(iterationCounter++ < startAtFrame){
+                return;
+            }
             var objectTags = tagManager.Query<ObjectsRandomizerTag>();
             foreach (var tag in objectTags){
                 if(tag.GetComponent<StaticController>().isStatic()){
@@ -113,18 +127,9 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
                     }
                 }
             }
-
-            var tags = tagManager.Query<CameraRandomizerTag>();
-            foreach (var tag in tags){
-                Vector3 position = Random.onUnitSphere * distance.Sample();
-                position.y = Math.Abs(position.y);
-                tag.transform.position = target.transform.position + position;
-                tag.transform.LookAt(target.transform.position);
-                tag.transform.Rotate(0,0,rotation_z.Sample(),Space.Self);
-                RequestCapture(tag);
+            if(iterationCounter >= captureFrames + startAtFrame){
+                iterationCounter = 0;
             }
-
-
         }
         
 

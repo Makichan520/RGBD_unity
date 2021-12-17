@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IdLabelConfig_office
   m_EditorClassIdentifier: 
   m_LabelEntries:
-  - label: Dark
+  - label: Duck
     id: 1
   - label: Terrain
     id: 2
@@ -107,5 +107,15 @@ MonoBehaviour:
     id: 46
   - label: Pallet
     id: 47
+  - label: Rack
+    id: 48
+  - label: AshTray
+    id: 49
+  - label: Glasses
+    id: 50
+  - label: Nameplate
+    id: 51
+  - label: Radio
+    id: 52
   autoAssignIds: 1
   startingLabelId: 1
