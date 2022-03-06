@@ -14,7 +14,7 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
         /// <summary>
         /// The range of random intensity to assign to target objects
         /// </summary>
-        [Tooltip("The range of random rotations to assign to target objects.")]
+        [Tooltip("The range of random intensity to assign to target objects.")]
         public FloatParameter brightness = new FloatParameter { value = new UniformSampler(0, 12)};
 
 

@@ -11,7 +11,7 @@ namespace UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers
     /// </summary>
     [Serializable]
     [AddRandomizerMenu("Perception/Background Randomizer")]
-    public class NewBackgroundRandomizer : Randomizer
+    public class SimpleBackgroundRandomizer : Randomizer
     {
         /// <summary>
         /// The number of frames that should be captured between 2 background randomizations.

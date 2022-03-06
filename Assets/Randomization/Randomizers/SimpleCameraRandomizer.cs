@@ -45,6 +45,7 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
                 tag.transform.position = target.transform.position + position;
                 tag.transform.LookAt(target.transform.position);
                 tag.transform.Rotate(0,0,rotation_z.Sample(),Space.Self);
+                //reprot the capture frame and infomation of camera
                 Debug.Log("Camera in " + Time.frameCount + ". frame: pos = x:" + tag.transform.position.x + "y: " + tag.transform.position.y
                 + "z: " + tag.transform.position.z +  "\n rot = " + tag.transform.rotation);
                 RequestCapture(tag);
@@ -52,7 +53,9 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
 
 
         }
-        
+        /// <summary>
+        /// Request camera to capture RGB image and Depth graph at same frame, show the message if capture success
+        /// </summary>
         private int RequestCapture(CameraRandomizerTag cameras){
             PerceptionCamera[] percCameras = cameras.GetComponentsInChildren<PerceptionCamera>();
             foreach (PerceptionCamera cam in percCameras)

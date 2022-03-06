@@ -15,7 +15,7 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
     public class PointLightRandomizer : Randomizer
     {
         /// <summary>
-        /// The target object of Pointlight
+        /// The target object of Pointlight (Point light will move around the target object)
         /// </summary>
         [Tooltip("The target object of light.")]
         public GameObject target;
