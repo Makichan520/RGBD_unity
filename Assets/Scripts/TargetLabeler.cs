@@ -5,6 +5,9 @@ using UnityEngine.Rendering;
 using UnityEngine.Perception.Randomization.Randomizers;
 using UnityEngine.Perception.Randomization.Randomizers.Tags;
 
+/// <summary>
+/// Report the information of target objects (position, rotation...), and output to JSON files
+/// </summary>
 [Serializable]
 public class TargetLabeler : CameraLabeler
 {

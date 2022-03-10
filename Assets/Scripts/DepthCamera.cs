@@ -17,8 +17,11 @@ namespace Perc6d
         public GraphicsFormat      _format = GraphicsFormat.R8G8B8A8_UNorm;
 
         float                      _elapsedTime;
-        string                     _baseDirectory;
+        [Tooltip("The output directory for depth graphs.")]
+        public string              _baseDirectory;
         public Camera              _camera;
+
+        private int iterationCount;
 
         public CaptureTriggerMode captureTriggerMode = CaptureTriggerMode.Scheduled;
 
@@ -26,7 +29,10 @@ namespace Perc6d
         
         void Start()
         {
-            _baseDirectory = Manager.Instance.GetDirectoryFor(DataCapturePaths.ScreenCapture);
+            if(_baseDirectory == ""){
+                _baseDirectory = "G:/Unity Output/ScreenCapture";
+            }
+            iterationCount = 1;
             if (_camera != null && _camera.depthTextureMode == DepthTextureMode.None)
                 _camera.depthTextureMode = DepthTextureMode.Depth;
         }
@@ -61,7 +67,7 @@ namespace Perc6d
             else
 #endif
                 path = Path.Combine(_baseDirectory,
-                    _camera.name + "_depth_" + Time.frameCount + "." + _imageFormat.ToString().ToLower());
+                    _camera.name + "_depth_" + iterationCount + "." + _imageFormat.ToString().ToLower());
 
             CaptureCamera.CaptureDepthToFile
             (
@@ -73,6 +79,7 @@ namespace Perc6d
 
             if (!_camera.enabled)
                 _camera.Render();
+            iterationCount++;
 
         }
 

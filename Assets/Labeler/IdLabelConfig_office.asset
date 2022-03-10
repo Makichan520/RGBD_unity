@@ -117,5 +117,13 @@ MonoBehaviour:
     id: 51
   - label: Radio
     id: 52
+  - label: Dark
+    id: 53
+  - label: Bottle
+    id: 54
+  - label: Folder
+    id: 55
+  - label: Cube
+    id: 56
   autoAssignIds: 1
   startingLabelId: 1

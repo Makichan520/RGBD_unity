@@ -144,6 +144,7 @@ namespace UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers
         {
             int counter = iterationCounter % (captureFrames + waitFrames*2);
             iterationCounter++;
+            Debug.Log("now running: " + counter + ".counter");
             // if at start of a new phase, start background generation 
             if(counter == 0){
                 var seed_0 = SamplerState.NextRandomState();
@@ -252,6 +253,9 @@ namespace UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers
                 m_GameObjectOneWayCache_1.ResetAllObjects();
                 m_GameObjectOneWayCache_2.ResetAllObjects();
                 m_GameObjectOneWayCache_option.ResetAllObjects();
+                foreach(var obj in targets){
+                    obj.transform.position = new Vector3(-2,0.06f,-8);
+                }
             }
         }
 

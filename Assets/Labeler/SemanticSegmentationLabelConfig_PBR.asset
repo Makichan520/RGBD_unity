@@ -69,3 +69,7 @@ MonoBehaviour:
     color: {r: 0.24583614, g: 1, b: 0.25306633, a: 1}
   - label: Table
     color: {r: 1, g: 0.23507762, b: 0.03885019, a: 1}
+  - label: Duck
+    color: {r: 0.33488017, g: 1, b: 0.74349993, a: 1}
+  - label: Cube
+    color: {r: 0.74565387, g: 1, b: 0.09019077, a: 1}

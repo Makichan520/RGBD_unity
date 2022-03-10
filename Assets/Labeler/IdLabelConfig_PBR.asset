@@ -69,5 +69,9 @@ MonoBehaviour:
     id: 27
   - label: Table
     id: 28
+  - label: Duck
+    id: 29
+  - label: Cube
+    id: 30
   autoAssignIds: 1
   startingLabelId: 1

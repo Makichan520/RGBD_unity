@@ -132,9 +132,6 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
                 RequestCapture(camera);
             }
 **/
-            if(iterationCounter >= captureFrames + startAtFrame){
-                iterationCounter = 0;
-            }
         }
         
         /// <summary>
@@ -142,24 +139,25 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
         /// </summary>
         protected override void OnUpdate(){
             status = true;
-            if(captured){
+            if(captured || iterationCounter <= startAtFrame){
                 return;
             }
             foreach(var obj in targets){
                 // check rendering status for targets
-                if(!obj.GetComponent<StaticController>().isRendering()){
+                Camera cam = camera.GetComponentInChildren<Camera>();
+                if(!obj.GetComponent<StaticController>().isRendering(cam)){
                     status = false;
                     Debug.Log("invisible on " + obj.name + " in " + Time.frameCount + "frames, " + iterationCounter + " .counter");
                     //break;
                 }
                 RaycastHit info;
                 // use physic raycast to check the occlusion status of targets
-                if(Physics.Linecast(camera.transform.position,obj.transform.position,out info)){
-                    if(info.collider.name != obj.name){
+                if(Physics.Linecast(obj.transform.position,camera.transform.position,out info)){
+                    
                         Debug.Log("occlusion on " + obj.name + " in " + Time.frameCount + "frames, " + iterationCounter + " .counter");
                         status = false;
                         //break;
-                    }
+
                 }
             }
             if(status && !captured){
@@ -167,6 +165,14 @@ namespace UnityEngine.Perception.Randomization.Randomizers{
                 RequestCapture(camera);
             }
 
+        }
+
+        protected override void OnIterationEnd(){
+            if(iterationCounter >= captureFrames + startAtFrame){
+                iterationCounter = 0;
+                minPosition = Vector3.positiveInfinity;
+                maxPosition = Vector3.negativeInfinity;
+            }
         }
         
         /// <summary>

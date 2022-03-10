@@ -4,6 +4,9 @@ using UnityEngine.Perception.GroundTruth;
 using UnityEngine.Rendering;
 using Unity.Mathematics;
 
+/// <summary>
+/// Report the information of camera(about Intrinstic Matrix), and write into JSON files 
+/// </summary>
 [Serializable]
 public class IntrinsicMatrixLabeler : CameraLabeler
 {
@@ -41,14 +44,15 @@ public class IntrinsicMatrixLabeler : CameraLabeler
     {
         float v_fov = cam.fieldOfView;
         float h_fov = Camera.VerticalToHorizontalFieldOfView(cam.fieldOfView,cam.aspect);
-        float alpha_u = (float)cam.pixelWidth / (float)Math.Tan(h_fov * Math.PI/360) / 2;
-        float alpha_v = (float)cam.pixelHeight / (float)Math.Tan(v_fov * Math.PI/360) / 2;
+        Debug.Log("v_fov: " + v_fov + "h_fov: " + h_fov);
+        float f_x = (float)cam.pixelWidth / (float)Math.Tan(h_fov * Math.PI/360);
+        float f_y = (float)cam.pixelHeight / (float)Math.Tan(v_fov * Math.PI/360);
 
-        float u_0 = cam.pixelWidth / 2;
-        float v_0 = cam.pixelHeight / 2;
+        float u_0 = cam.pixelWidth;
+        float v_0 = cam.pixelHeight;
         //IntrinsicMatrix in row major
-        float3x3 camIntriMatrix = new float3x3(alpha_u, 0f, u_0,
-                                            0f, alpha_v, v_0,
+        float3x3 camIntriMatrix = new float3x3(f_x, 0f, u_0,
+                                            0f, f_y, v_0,
                                             0f, 0f, 1f);
         return camIntriMatrix;
     }

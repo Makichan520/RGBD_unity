@@ -2,6 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.Perception.GroundTruth;
 
+/// <summary>
+/// Report the information of target objects and camera(position, rotation...), and output to JSON files
+/// </summary>
 [RequireComponent(typeof(PerceptionCamera))]
 public class CustomReporter : MonoBehaviour
 {
@@ -10,16 +13,21 @@ public class CustomReporter : MonoBehaviour
     AnnotationDefinition TargetAnnotationDefinition;
     SensorHandle cameraSensorHandle;
 
+    Camera m_camera;
+
     public struct TargetInformation{
         public String name;
         public Vector3 position;
         public Quaternion rotation;
+
+        public Matrix4x4 relative_rt;
     }
 
     private TargetInformation[] informations;
 
     public void Start()
     {
+        m_camera = GetComponent<Camera>();
         //annotations are registered up-front
         TargetAnnotationDefinition = DatasetCapture.RegisterAnnotationDefinition(
             "Target position and rotation",
@@ -36,7 +44,9 @@ public class CustomReporter : MonoBehaviour
             informations = new TargetInformation[targets.Length];
             int index = 0;
             foreach(var target in targets){
-                informations[index++] = new TargetInformation {name = target.name, position = target.transform.position,rotation = target.transform.rotation};
+                Quaternion cam_rt = m_camera.transform.rotation;
+                Matrix4x4 n_rt = Matrix4x4.Rotate(Quaternion.Inverse(cam_rt)*target.transform.rotation);
+                informations[index++] = new TargetInformation {name = target.name, position = target.transform.position,rotation = target.transform.rotation, relative_rt = n_rt};
             }
             sensorHandle.ReportAnnotationValues(
                 TargetAnnotationDefinition,

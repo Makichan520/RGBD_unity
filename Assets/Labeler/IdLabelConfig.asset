@@ -17,5 +17,9 @@ MonoBehaviour:
     id: 1
   - label: Plane
     id: 2
+  - label: Dark
+    id: 3
+  - label: Cube
+    id: 4
   autoAssignIds: 1
   startingLabelId: 1

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Used for debug, measure the object to validate correctness of model
+/// </summary>
 public class ObjectMess : MonoBehaviour
 {
     // Start is called before the first frame update

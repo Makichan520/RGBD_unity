@@ -113,3 +113,11 @@ MonoBehaviour:
     color: {r: 0.61221564, g: 1, b: 0.19820607, a: 1}
   - label: Radio
     color: {r: 0.06899363, g: 0.6872889, b: 1, a: 1}
+  - label: Duck
+    color: {r: 0.073462844, g: 1, b: 0.84141016, a: 1}
+  - label: Bottle
+    color: {r: 0.1993854, g: 1, b: 0.9240109, a: 1}
+  - label: Folder
+    color: {r: 0.069618106, g: 0.40219864, b: 1, a: 1}
+  - label: Cube
+    color: {r: 1, g: 0.47019643, b: 0.26833403, a: 1}

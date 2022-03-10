@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Report the status of target object, estimate if it is static
+/// </summary>
 public class StaticController : MonoBehaviour
 {
     private bool status = false;
-    private bool is_Rendering = false;
-    private float renderTime = 0;
     private Vector3 lastPosition;
     private float lastTime = 0;
-    
-    private float lastRenderTime = 0;
+
+    private float last_render = 0;
+
+    private float curr_render = 0;
+
+    private bool is_Rendering = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,27 +33,32 @@ public class StaticController : MonoBehaviour
         }else{
             status = false;
         }
-        if(lastTime != Time.time && renderTime != lastRenderTime){
-            is_Rendering = true;
-        }else{
-            is_Rendering = false;
-        }
         //LogInfos();
         lastPosition = transform.position;
         lastTime = Time.time;
-        lastRenderTime = renderTime;
+
+        is_Rendering = curr_render != last_render ? true:false;
+        last_render = curr_render;
     }
 
     public bool isStatic(){
         return status;
     }
+    public bool isRendering(Camera cam) {
+        Transform camTransform = cam.transform;
+        Vector2 viewPos = cam.WorldToViewportPoint(this.transform.position);
+        if(viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1){
+            is_Rendering = true;
+        }else{
+            is_Rendering = false;
+        }
+        return is_Rendering; 
+        }
+ 
 
-    public bool isRendering(){
-        return is_Rendering;
-    }
 
     private void OnWillRenderObject() {
-        renderTime = Time.time;
+        curr_render = Time.time;
     }
 
     private void ObjectMeasure(){
