@@ -58,6 +58,7 @@
      <Compile Include="Assets\Randomization\Randomizers\SimpleBackgroundRandomizer.cs" />
      <Compile Include="Assets\Scripts\ObjectMeasure.cs" />
      <Compile Include="Assets\Scripts\CustomReporter.cs" />
+     <Compile Include="Assets\Randomization\Randomizers\OfficeLightRandomizer.cs" />
      <None Include="Assets\Enviroments Assets\QA_Office\ReadMe.txt" />
      <None Include="Assets\Enviroments Assets\OfficeInteriors\Readme.txt" />
      <None Include="Assets\Enviroments Assets\OfficeInteriors\Src\scene3\Shaders\OR_AWFUSTransparent.shader" />

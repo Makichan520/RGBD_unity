@@ -66,7 +66,7 @@ namespace UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers
         /// <summary>
         /// The 2D size of the generated background layers
         /// </summary>
-        [Tooltip("The width and height of the area in which objects will be placed. These should be positive numbers and sufficiently large in relation with the Separation Distance specified.")]
+        [Tooltip("The width and length of the area in which objects will be placed. These should be positive numbers and sufficiently large in relation with the Separation Distance specified.")]
         public Vector2 placementArea;
 
 
