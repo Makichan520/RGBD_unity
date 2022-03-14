@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../win_RGBD/RGBD_unity"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
